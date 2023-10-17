@@ -1,8 +1,11 @@
 version: '3.8'
 
 services:
-  nginx:
-    image: nginx:latest
+  app:
+    # image: nginx:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always  # Habilita o reinício automático
     # container_name: nginx_proxy
     ports:
@@ -11,8 +14,13 @@ services:
       # - ./nginx-conf_d:/etc/nginx/conf.d
       - ./nginx:/etc/nginx
     networks:
-      - net
+      default:
+        ipv4_address: 10.0.2.2
 
 networks:
-  net:
+  default: 
     driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.2.0/24
+  
