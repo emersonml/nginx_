@@ -13,14 +13,5 @@ services:
     volumes:
       # - ./nginx-conf_d:/etc/nginx/conf.d
       - ./nginx:/etc/nginx
-    networks:
-      network:
-        ipv4_address: 10.0.2.2
 
-networks:
-  network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.0.2.0/24
   
