@@ -17,6 +17,12 @@ services:
       network:
         ipv4_address: 10.0.2.2
 
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+
 networks:
   network:
     driver: bridge
