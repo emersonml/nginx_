@@ -1,3 +1,7 @@
+
+10.0.2.51   5gbrasil
+
+
 NGINX é um servico de proxy reverso usando o nginx
 
 nginx
